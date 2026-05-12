@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import termsWomen from "../assets/termstwomen.png";
-import termsMan from "../assets/termsoneman.png";
-import NewsletterBanner from "../components/Newsletterbanner";
+import termsWomen from "../../assets/termstwomen.png";
+import termsMan from "../../assets/termsoneman.png";
+import NewsletterBanner from "../../components/Newsletterbanner";
 
 const sections = [
   { id: "acceptance", number: "01", label: "Acceptance of Terms" },
