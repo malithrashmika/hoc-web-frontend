@@ -1,14 +1,38 @@
 import { useState, useEffect } from "react";
+import {
+  Package,
+  RefreshCw,
+  CreditCard,
+  Star,
+  Tag,
+  Lock,
+  ThumbsUp,
+  ThumbsDown,
+  MessageCircle,
+  Mail,
+  Phone,
+  Plus,
+  Minus,
+} from "lucide-react";
 import faqImage from "../../assets/faqimage.png";
 import NewsletterBanner from "../../components/Newsletterbanner";
 
+const categoryIconMap = {
+  orders: Package,
+  returns: RefreshCw,
+  payment: CreditCard,
+  loyalty: Star,
+  brands: Tag,
+  privacy: Lock,
+};
+
 const categories = [
-  { id: "orders", icon: "📦", label: "Orders & Shipping", count: 8 },
-  { id: "returns", icon: "🔄", label: "Returns & Refunds", count: 6 },
-  { id: "payment", icon: "💳", label: "Payment", count: 5 },
-  { id: "loyalty", icon: "⭐", label: "Loyalty Points", count: 4 },
-  { id: "brands", icon: "🏷️", label: "Brands & Products", count: 4 },
-  { id: "privacy", icon: "🔒", label: "Privacy & Security", count: 3 },
+  { id: "orders", label: "Orders & Shipping", count: 8 },
+  { id: "returns", label: "Returns & Refunds", count: 6 },
+  { id: "payment", label: "Payment", count: 5 },
+  { id: "loyalty", label: "Loyalty Points", count: 4 },
+  { id: "brands", label: "Brands & Products", count: 4 },
+  { id: "privacy", label: "Privacy & Security", count: 3 },
 ];
 
 const popularTopics = [
@@ -31,7 +55,7 @@ const allFaqSectionIds = [
 const faqData = {
   orders: {
     title: "Orders & Shipping",
-    icon: "📦",
+    icon: "orders",
     items: [
       {
         id: "o1",
@@ -73,7 +97,7 @@ const faqData = {
   },
   returns: {
     title: "Returns & Refunds",
-    icon: "🔄",
+    icon: "returns",
     items: [
       {
         id: "r1",
@@ -112,7 +136,7 @@ const faqData = {
   },
   payment: {
     title: "Payment",
-    icon: "💳",
+    icon: "payment",
     items: [
       {
         id: "p1",
@@ -140,7 +164,7 @@ const faqData = {
   },
   loyalty: {
     title: "Loyalty Programme",
-    icon: "⭐",
+    icon: "loyalty",
     items: [
       {
         id: "l1",
@@ -161,7 +185,7 @@ const faqData = {
   },
   brands: {
     title: "Brands & Products",
-    icon: "🏷️",
+    icon: "brands",
     items: [
       {
         id: "b1",
@@ -182,7 +206,7 @@ const faqData = {
   },
   privacy: {
     title: "Privacy & Security",
-    icon: "🔒",
+    icon: "privacy",
     items: [
       {
         id: "pr1",
@@ -216,8 +240,8 @@ function AccordionItem({ item }) {
         <span className="font-medium text-gray-800 text-sm md:text-base pr-4">
           {item.question}
         </span>
-        <span className="text-gray-400 text-xl shrink-0 font-light">
-          {open ? "−" : "+"}
+        <span className="text-gray-400 shrink-0">
+          {open ? <Minus size={18} /> : <Plus size={18} />}
         </span>
       </button>
 
@@ -250,7 +274,7 @@ function AccordionItem({ item }) {
                   : "border-gray-200 text-gray-600 hover:border-[#FFB700]"
               }`}
             >
-              👍 Yes
+              <ThumbsUp size={14} /> Yes
             </button>
             <button
               onClick={() => setHelpful("no")}
@@ -260,7 +284,7 @@ function AccordionItem({ item }) {
                   : "border-gray-200 text-gray-600 hover:border-gray-400"
               }`}
             >
-              👎 No
+              <ThumbsDown size={14} /> No
             </button>
           </div>
         </div>
@@ -274,7 +298,6 @@ export default function FAQPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchResults, setSearchResults] = useState(null);
 
-  // Scroll spy — disabled when search is active
   useEffect(() => {
     if (searchResults !== null) return;
     const observers = [];
@@ -335,7 +358,6 @@ export default function FAQPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Breadcrumb */}
       <div className="max-w-7xl mx-auto px-4 py-3">
         <p className="text-sm text-gray-500">
           Home <span className="mx-1 text-gray-400">/</span>
@@ -344,7 +366,6 @@ export default function FAQPage() {
         </p>
       </div>
 
-      {/* Hero Banner */}
       <div className="max-w-7xl mx-auto px-4 mb-10">
         <div className="bg-gray-100 rounded-2xl overflow-hidden relative flex flex-col md:flex-row items-center justify-between px-8 md:px-14 py-10 gap-6">
           <div className="flex-1 z-10">
@@ -382,7 +403,6 @@ export default function FAQPage() {
         </div>
       </div>
 
-      {/* Search Results */}
       {searchResults !== null && (
         <div className="max-w-7xl mx-auto px-4 mb-10">
           <div className="flex items-center justify-between mb-4">
@@ -415,44 +435,44 @@ export default function FAQPage() {
         </div>
       )}
 
-      {/* Main Content */}
       {searchResults === null && (
         <div className="max-w-7xl mx-auto px-4 pb-16 flex flex-col md:flex-row gap-8">
-          {/* Sidebar */}
           <aside className="w-full md:w-56 shrink-0">
             <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
               Categories
             </p>
             <ul className="space-y-1">
-              {categories.map((cat) => (
-                <li key={cat.id}>
-                  <button
-                    onClick={() => handleCategoryClick(cat.id)}
-                    className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-all ${
-                      activeCategory === cat.id
-                        ? "bg-[#FFB700] text-black font-semibold"
-                        : "text-gray-700 hover:bg-gray-100"
-                    }`}
-                  >
-                    <span className="flex items-center gap-2">
-                      <span>{cat.icon}</span>
-                      <span>{cat.label}</span>
-                    </span>
-                    <span
-                      className={`text-xs font-bold px-1.5 py-0.5 rounded ${
+              {categories.map((cat) => {
+                const Icon = categoryIconMap[cat.id];
+                return (
+                  <li key={cat.id}>
+                    <button
+                      onClick={() => handleCategoryClick(cat.id)}
+                      className={`w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-sm transition-all ${
                         activeCategory === cat.id
-                          ? "bg-black text-white"
-                          : "bg-gray-200 text-gray-600"
+                          ? "bg-[#FFB700] text-black font-semibold"
+                          : "text-gray-700 hover:bg-gray-100"
                       }`}
                     >
-                      {cat.count}
-                    </span>
-                  </button>
-                </li>
-              ))}
+                      <span className="flex items-center gap-2">
+                        <Icon size={20} strokeWidth={1.5} className="text-[#FFB700]" />
+                        <span>{cat.label}</span>
+                      </span>
+                      <span
+                        className={`text-xs font-bold px-1.5 py-0.5 rounded ${
+                          activeCategory === cat.id
+                            ? "bg-black text-white"
+                            : "bg-gray-200 text-gray-600"
+                        }`}
+                      >
+                        {cat.count}
+                      </span>
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
 
-            {/* Popular Topics */}
             <div className="mt-8">
               <p className="text-xs font-semibold text-gray-500 uppercase tracking-widest mb-3">
                 Popular Topics
@@ -494,21 +514,22 @@ export default function FAQPage() {
             </div>
           </aside>
 
-          {/* FAQ Sections — all rendered for scroll spy */}
           <main className="flex-1 min-w-0">
-            {Object.entries(faqData).map(([key, section]) => (
-              <div key={key} id={key} className="mb-10 scroll-mt-6">
-                <h2 className="text-xl font-bold text-gray-900 mb-5 flex items-center gap-2">
-                  <span>{section.icon}</span>
-                  <span>{section.title}</span>
-                </h2>
-                {section.items.map((item) => (
-                  <AccordionItem key={item.id} item={item} />
-                ))}
-              </div>
-            ))}
+            {Object.entries(faqData).map(([key, section]) => {
+              const Icon = categoryIconMap[section.icon];
+              return (
+                <div key={key} id={key} className="mb-10 scroll-mt-6">
+                  <h2 className="text-xl font-bold text-gray-900 mb-5 flex items-center gap-2">
+                    <Icon size={24} strokeWidth={1.5} className="text-[#FFB700]" />
+                    <span>{section.title}</span>
+                  </h2>
+                  {section.items.map((item) => (
+                    <AccordionItem key={item.id} item={item} />
+                  ))}
+                </div>
+              );
+            })}
 
-            {/* Didn't find your answer */}
             <div className="border border-gray-200 rounded-xl p-6 mt-4">
               <h3 className="text-lg font-semibold text-gray-900 mb-1">
                 Didn't find your answer?
@@ -519,7 +540,7 @@ export default function FAQPage() {
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="flex flex-col items-center text-center border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
-                  <span className="text-3xl mb-2">💬</span>
+                  <MessageCircle size={32} strokeWidth={1.5} className="mb-2 text-[#FFB700]" />
                   <p className="font-semibold text-gray-800 text-sm mb-1">
                     Live Chat
                   </p>
@@ -532,7 +553,7 @@ export default function FAQPage() {
                 </div>
 
                 <div className="flex flex-col items-center text-center border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
-                  <span className="text-3xl mb-2">📧</span>
+                  <Mail size={32} strokeWidth={1.5} className="mb-2 text-[#FFB700]" />
                   <p className="font-semibold text-gray-800 text-sm mb-1">
                     Email Support
                   </p>
@@ -547,7 +568,7 @@ export default function FAQPage() {
                 </div>
 
                 <div className="flex flex-col items-center text-center border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
-                  <span className="text-3xl mb-2">📞</span>
+                  <Phone size={32} strokeWidth={1.5} className="mb-2 text-[#FFB700]" />
                   <p className="font-semibold text-gray-800 text-sm mb-1">
                     Phone Support
                   </p>

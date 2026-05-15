@@ -94,7 +94,7 @@ export default function TermsAndConditionsPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Breadcrumb */}
+       
       <div className="max-w-7xl mx-auto px-4 py-3">
         <p className="text-sm text-gray-500">
           Home <span className="mx-1">/</span> Pages{" "}
@@ -103,7 +103,7 @@ export default function TermsAndConditionsPage() {
         </p>
       </div>
 
-      {/* Hero */}
+      
       <div className="max-w-7xl mx-auto px-4 mb-10">
         <div className="border border-blue-200 rounded-2xl px-10 py-8 flex items-center justify-between gap-6 bg-white">
           <div className="flex-1">
@@ -149,9 +149,9 @@ export default function TermsAndConditionsPage() {
         </div>
       </div>
 
-      {/* Body */}
+      
       <div className="max-w-7xl mx-auto px-4 pb-16 flex gap-8">
-        {/* Sidebar */}
+        
         <aside className="hidden lg:block w-52 shrink-0">
           <div className="sticky top-6">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
@@ -191,7 +191,7 @@ export default function TermsAndConditionsPage() {
               ))}
             </nav>
 
-            {/* Sidebar illustration */}
+            
             <div className="mt-8">
               <img
                 src={termsMan}
@@ -202,7 +202,7 @@ export default function TermsAndConditionsPage() {
           </div>
         </aside>
 
-        {/* Main Content */}
+        
         <main className="flex-1 min-w-0 space-y-6">
           {/* Important Banner */}
           <div className="bg-gray-100 border border-gray-200 rounded-xl px-6 py-4">
@@ -217,7 +217,7 @@ export default function TermsAndConditionsPage() {
             </p>
           </div>
 
-          {/* Section 01 */}
+          
           <Section id="acceptance" number="SECTION 01" title="Acceptance of Terms">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               These Terms & Conditions ("Terms") govern your access to and use
@@ -235,7 +235,7 @@ export default function TermsAndConditionsPage() {
             </p>
           </Section>
 
-          {/* Section 02 */}
+          
           <Section id="definitions" number="SECTION 02" title="Definitions">
             <div className="divide-y divide-gray-100">
               {[
@@ -260,7 +260,7 @@ export default function TermsAndConditionsPage() {
             </div>
           </Section>
 
-          {/* Section 03 */}
+          
           <Section id="use-of-website" number="SECTION 03" title="Use of the Website">
             <div id="eligibility" className="scroll-mt-6 mb-6">
               <h3 className="text-sm font-bold text-gray-800 mb-2">
@@ -318,7 +318,7 @@ export default function TermsAndConditionsPage() {
             </div>
           </Section>
 
-          {/* Section 04 */}
+          
           <Section id="products-pricing" number="SECTION 04" title="Products & Pricing">
             <div id="product-descriptions" className="scroll-mt-6 mb-6">
               <h3 className="text-sm font-bold text-gray-800 mb-2">
@@ -369,7 +369,7 @@ export default function TermsAndConditionsPage() {
             </div>
           </Section>
 
-          {/* Section 05 */}
+          
           <Section id="orders-payment" number="SECTION 05" title="Orders & Payment">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               Submitting an order constitutes an offer to purchase. An order is
@@ -403,7 +403,7 @@ export default function TermsAndConditionsPage() {
             />
           </Section>
 
-          {/* Section 06 */}
+          
           <Section id="delivery" number="SECTION 06" title="Delivery">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               Estimated delivery timeframes are provided at checkout and in your
@@ -426,7 +426,7 @@ export default function TermsAndConditionsPage() {
             </p>
           </Section>
 
-          {/* Section 07 */}
+          
           <Section id="returns-refunds" number="SECTION 07" title="Returns & Refunds">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               Our full Returns & Refund Policy is detailed in a separate
@@ -442,7 +442,7 @@ export default function TermsAndConditionsPage() {
             />
           </Section>
 
-          {/* Section 08 */}
+      
           <Section id="intellectual-property" number="SECTION 08" title="Intellectual Property">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               All content on this website, including but not limited to text,
@@ -464,7 +464,7 @@ export default function TermsAndConditionsPage() {
             />
           </Section>
 
-          {/* Section 09 */}
+          
           <Section id="user-content" number="SECTION 09" title="User-Generated Content (Reviews & Ratings)">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               Registered customers who have completed a verified purchase may
@@ -490,7 +490,7 @@ export default function TermsAndConditionsPage() {
             </p>
           </Section>
 
-          {/* Section 10 */}
+          
           <Section id="loyalty" number="SECTION 10" title="Loyalty Programme">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               The House of Cambridge Loyalty Programme awards points on eligible
@@ -508,7 +508,7 @@ export default function TermsAndConditionsPage() {
             />
           </Section>
 
-          {/* Section 11 */}
+          
           <Section id="promo-codes" number="SECTION 11" title="Promotional Codes & Discounts">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               Promotional codes and discount offers are subject to the following
@@ -525,7 +525,7 @@ export default function TermsAndConditionsPage() {
             />
           </Section>
 
-          {/* Section 12 */}
+          
           <Section id="liability" number="SECTION 12" title="Limitation of Liability">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               To the fullest extent permitted by applicable law, House of
@@ -550,7 +550,7 @@ export default function TermsAndConditionsPage() {
             />
           </Section>
 
-          {/* Section 13 */}
+          
           <Section id="governing-law" number="SECTION 13" title="Governing Law & Dispute Resolution">
             <p className="text-gray-600 text-sm leading-relaxed mb-3">
               These Terms & Conditions are governed by and construed in
@@ -595,7 +595,7 @@ function BulletList({ items }) {
     <ul className="space-y-1.5 ml-4">
       {items.map((item, i) => (
         <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
-          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0" />
+          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
           {item}
         </li>
       ))}

@@ -74,7 +74,7 @@ export default function PrivacyPolicyPage() {
 
   return (
     <div className="bg-white min-h-screen">
-      {/* Breadcrumb */}
+      
       <div className="max-w-7xl mx-auto px-4 py-3">
         <p className="text-sm text-gray-500">
           Home <span className="mx-1">/</span> Pages{" "}
@@ -83,7 +83,7 @@ export default function PrivacyPolicyPage() {
         </p>
       </div>
 
-      {/* Hero */}
+      
       <div className="max-w-7xl mx-auto px-4 mb-10">
         <div className="bg-gray-100 rounded-2xl px-10 py-8 flex items-center justify-between gap-6">
           <div className="flex-1">
@@ -129,9 +129,8 @@ export default function PrivacyPolicyPage() {
         </div>
       </div>
 
-      {/* Body */}
       <div className="max-w-7xl mx-auto px-4 pb-16 flex gap-8">
-        {/* Sidebar */}
+        
         <aside className="hidden lg:block w-52 shrink-0">
           <div className="sticky top-6">
             <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-3">
@@ -173,7 +172,6 @@ export default function PrivacyPolicyPage() {
               ))}
             </nav>
 
-            {/* Sidebar illustration */}
             <div className="mt-8">
               <img
                 src={privacyLaptop}
@@ -184,9 +182,9 @@ export default function PrivacyPolicyPage() {
           </div>
         </aside>
 
-        {/* Main Content */}
+       
         <main className="flex-1 min-w-0 space-y-6">
-          {/* Section 01 */}
+         
           <Section id="introduction" number="SECTION 01" title="Introduction">
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
               House Of Cambridge ("we," "our," or "us") is committed to
@@ -204,7 +202,7 @@ export default function PrivacyPolicyPage() {
             <NoteBox text="This policy is compliant with applicable data protection regulations including GDPR principles and local Sri Lankan data protection guidelines. Our security systems implement AES-256 encryption and TLS 1.2+ for all data transmissions." />
           </Section>
 
-          {/* Section 02 */}
+          
           <Section
             id="information-we-collect"
             number="SECTION 02"
@@ -264,7 +262,7 @@ export default function PrivacyPolicyPage() {
             </div>
           </Section>
 
-          {/* Section 03 */}
+          
           <Section
             id="how-we-use"
             number="SECTION 03"
@@ -346,7 +344,7 @@ export default function PrivacyPolicyPage() {
             </div>
           </Section>
 
-          {/* Section 04 */}
+          
           <Section
             id="data-sharing"
             number="SECTION 04"
@@ -387,7 +385,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </Section>
 
-          {/* Section 05 */}
+          
           <Section
             id="data-retention"
             number="SECTION 05"
@@ -457,7 +455,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </Section>
 
-          {/* Section 06 */}
+          
           <Section id="your-rights" number="SECTION 06" title="Your Rights">
             <p className="text-gray-600 text-sm leading-relaxed mb-4">
               You have the following rights with respect to your personal data
@@ -512,7 +510,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </Section>
 
-          {/* Section 07 */}
+        
           <Section
             id="cookies-policy"
             number="SECTION 07"
@@ -587,7 +585,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </Section>
 
-          {/* Section 08 */}
+      
           <Section
             id="security-measures"
             number="SECTION 08"
@@ -639,7 +637,7 @@ export default function PrivacyPolicyPage() {
             </p>
           </Section>
 
-          {/* Section 09 */}
+          
           <Section
             id="third-party"
             number="SECTION 09"
@@ -686,7 +684,6 @@ export default function PrivacyPolicyPage() {
   );
 }
 
-// Reusable Section wrapper
 function Section({ id, number, title, children }) {
   return (
     <div id={id} className="scroll-mt-6 border border-gray-200 rounded-xl p-7">
@@ -701,13 +698,12 @@ function Section({ id, number, title, children }) {
   );
 }
 
-// Reusable bullet list
 function BulletList({ items }) {
   return (
     <ul className="space-y-1.5 ml-4">
       {items.map((item, i) => (
         <li key={i} className="text-sm text-gray-600 flex items-start gap-2">
-          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 flex-shrink-0" />
+          <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-400 shrink-0" />
           {item}
         </li>
       ))}
@@ -715,7 +711,6 @@ function BulletList({ items }) {
   );
 }
 
-// Note box
 function NoteBox({ text }) {
   return (
     <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mt-2">
