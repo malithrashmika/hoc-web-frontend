@@ -3,7 +3,7 @@ import FAQPage from './pages/legal/Faqpage';
 import PrivacyPolicyPage from './pages/legal/Privacypolicypage';
 import TermsAndConditionsPage from './pages/legal/Termsandconditionspage';
 import OrderManagement from './pages/Admin/Ordermanagement';
-import Loginpage from './pages/auth/Loginpage';
+import Loginpage from './pages/Admin/AdminLogin';
 
 export default function App() {
   return (
