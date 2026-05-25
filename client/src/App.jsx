@@ -7,6 +7,8 @@ import Loginpage from "./pages/auth/Loginpage";
 import CouponList from "./pages/Admin/CouponList";
 import AddCoupon from "./pages/Admin/AddCoupon";
 import EditCoupon from "./pages/Admin/EditCoupon";
+import SendNotification from "./pages/Admin/SendNotification";
+import NotificationHistory from "./pages/Admin/NotificationHistory";
 
 export default function App() {
   return (
@@ -20,6 +22,8 @@ export default function App() {
       <Route path="/admin/coupons" element={<CouponList />} />
       <Route path="/admin/coupons/add" element={<AddCoupon />} />
       <Route path="/admin/coupons/edit/:id" element={<EditCoupon />} />
+      <Route path="/admin/send-notification" element={<SendNotification />} />
+      <Route path="/admin/notifications" element={<NotificationHistory />} />
     </Routes>
   );
 }
